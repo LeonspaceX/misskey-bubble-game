@@ -1,0 +1,72 @@
+@font-face {
+  font-family: "tabler-icons-outline";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/tabler-icons-outline-200.woff2?v=3") format("woff2");
+}
+
+.ti {
+  font-family: "tabler-icons-outline" !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  font-synthesis: none;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ti-music::before {
+  content: "\eafc";
+}
+
+.ti-settings::before {
+  content: "\eb20";
+}
+
+.ti-player-stop::before {
+  content: "\ed4a";
+}
+
+.ti-player-track-next::before {
+  content: "\ed4b";
+}
+
+.ti-player-play::before {
+  content: "\ed46";
+}
+
+.ti-arrow-big-right::before {
+  content: "\eddc";
+}
+
+/* Force outline rendering for music/settings using SVG masks */
+.ti.ti-music::before,
+.ti.ti-settings::before {
+  content: "";
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  background-color: currentColor;
+  vertical-align: -12%;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+}
+
+.ti.ti-music::before {
+  -webkit-mask-image: url("/icons/tabler/music.svg");
+  mask-image: url("/icons/tabler/music.svg");
+}
+
+.ti.ti-settings::before {
+  -webkit-mask-image: url("/icons/tabler/settings.svg");
+  mask-image: url("/icons/tabler/settings.svg");
+}
